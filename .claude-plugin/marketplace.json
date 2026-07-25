@@ -1,0 +1,38 @@
+{
+  "name": "academic-writing",
+  "owner": {
+    "name": "nhdu1105",
+    "url": "https://github.com/nhdu1105"
+  },
+  "metadata": {
+    "description": "Marketplace for the Academic Writing skill pipeline: research question finding, dissertation structuring, literature research, chapter writing, and quality review for a 15,000-word Staffordshire University MBA Final Project.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "academic-writing-skills",
+      "source": "./",
+      "description": "5-skill pipeline for postgraduate dissertation writing (Harvard referencing, 15,000 words): rq-finding, dissertation-structure, deep-research, academic-chapter-writing-agent, quality-check.",
+      "version": "1.0.0",
+      "author": {
+        "name": "nhdu1105"
+      },
+      "category": "education",
+      "tags": [
+        "academic-writing",
+        "dissertation",
+        "research",
+        "education",
+        "mba"
+      ],
+      "strict": false,
+      "skills": [
+        "skills/rq-finding",
+        "skills/dissertation-structure",
+        "skills/deep-research",
+        "skills/academic-chapter-writing-agent",
+        "skills/quality-check"
+      ]
+    }
+  ]
+}
