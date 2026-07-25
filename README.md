@@ -7,8 +7,8 @@ Bộ 5 skill cho Academic Writing, 15,000 từ, tiếng Anh, Harvard referencing
 **Qua Claude Code / Claude Cowork (plugin marketplace):**
 
 ```
-/plugin marketplace add nhdu1105/academic-writing
-/plugin install academic-writing-skills@academic-writing
+/plugin marketplace add nhdu1105/academic-writing-v2
+/plugin install academic-writing-skills@academic-writing-v2
 ```
 
 Cả 5 skill sẽ xuất hiện dưới dạng `academic-writing-skills:<tên-skill>` và tự kích hoạt theo đúng chủ đề, không cần gõ lệnh — nhưng vì chúng phụ thuộc lẫn nhau, Claude cần tự kiểm tra trạng thái dự án trước khi chọn skill, không chỉ khớp từ khóa trong câu hỏi. Xem phần "Quy tắc điều phối" bên dưới.
