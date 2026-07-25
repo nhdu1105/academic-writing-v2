@@ -1,12 +1,13 @@
 {
   "name": "academic-writing-skills",
   "version": "1.0.0",
-  "description": "A coordinated 5-skill pipeline for writing a 15,000-word Staffordshire University MBA Final Project: finding and locking a research question, structuring the dissertation, researching and verifying literature, drafting chapters with argument review, and auditing quality against the marking rubric.",
+  "description": "A coordinated 5-skill pipeline for writing a 15,000-word Staffordshire University MBA Final Project (BUSM70020): finding and locking a research question, structuring the dissertation, researching and verifying literature, drafting chapters with argument review, and auditing quality against the marking rubric.",
   "author": {
     "name": "nhdu1105",
     "url": "https://github.com/nhdu1105"
   },
   "homepage": "https://github.com/nhdu1105/academic-writing-v2",
+  "repository": "https://github.com/nhdu1105/academic-writing-v2",
   "license": "CC-BY-NC-4.0",
   "keywords": [
     "academic-writing",
