@@ -1,26 +1,38 @@
 {
-  "name": "academic-writing-skills",
-  "version": "1.0.0",
-  "description": "A coordinated 5-skill pipeline for writing a 15,000-word Staffordshire University MBA Final Project (BUSM70020): finding and locking a research question, structuring the dissertation, researching and verifying literature, drafting chapters with argument review, and auditing quality against the marking rubric.",
-  "author": {
+  "name": "academic-writing-v2",
+  "owner": {
     "name": "nhdu1105",
-    "url": "https://github.com/nhdu1105"
+    "url": "https://github.com/nhdu1105/academic-writing-v2"
   },
-  "homepage": "https://github.com/nhdu1105/academic-writing-v2",
-  "repository": "https://github.com/nhdu1105/academic-writing-v2",
-  "license": "CC-BY-NC-4.0",
-  "keywords": [
-    "academic-writing",
-    "dissertation",
-    "research-question",
-    "literature-review",
-    "quality-check"
-  ],
-  "skills": [
-    "skills/rq-finding",
-    "skills/dissertation-structure",
-    "skills/deep-research",
-    "skills/academic-chapter-writing-agent",
-    "skills/quality-check"
+  "metadata": {
+    "description": "Marketplace for the Academic Writing skill pipeline: research question finding, dissertation structuring, literature research, chapter writing, and quality review for a 15,000-word Staffordshire University MBA Final Project.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "academic-writing-skills",
+      "source": "./",
+      "description": "5-skill pipeline for postgraduate dissertation writing (Harvard referencing, 15,000 words): rq-finding, dissertation-structure, deep-research, academic-chapter-writing-agent, quality-check.",
+      "version": "1.0.0",
+      "author": {
+        "name": "nhdu1105"
+      },
+      "category": "education",
+      "tags": [
+        "academic-writing",
+        "dissertation",
+        "research",
+        "education",
+        "mba"
+      ],
+      "strict": false,
+      "skills": [
+        "skills/rq-finding",
+        "skills/dissertation-structure",
+        "skills/deep-research",
+        "skills/academic-chapter-writing-agent",
+        "skills/quality-check"
+      ]
+    }
   ]
 }
