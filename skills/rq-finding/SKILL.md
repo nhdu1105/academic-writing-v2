@@ -173,13 +173,27 @@ Once locked, convert the research question into one overall aim, then decompose 
 
 The aim preserves the same constructs (brand equity → trust, value, loyalty) and the same context (media campaigns, product recalls); it changes only from asking to intending.
 
-**From aim to objectives.** Objectives break the aim into the specific analytical steps that, completed together, achieve it. Each is a single infinitive statement (To discover..., To analyse..., To assess..., To evaluate...), and each addresses one component of the aim.
+**Choosing the verb.** The aim and every objective open with an infinitive verb, and the verb is chosen deliberately from the cognitive-level bank below rather than by habit. The level of the verb signals the level of thinking, and the rubric rewards the higher levels far more than description - a set of objectives built entirely on *describe*, *identify* and *discuss* signals undergraduate work before the marker reaches the method. The objectives should climb the ladder: an early objective may sit at understanding or applying level to establish the groundwork, but the analytical weight must come from analysing, synthesising and evaluating, and the final objective almost always takes an evaluating verb (*recommend*, *conclude*, *evaluate*) because it feeds the conclusions chapter. The aim itself normally opens at analysing or evaluating level (*analyse*, *assess*, *evaluate*), since it states the study's overall analytical purpose.
+
+| Level | What it does | Verbs to open with |
+|---|---|---|
+| Understanding | Understanding and organising information | Review, Identify, Explore, Discover, Discuss, Summarise, Describe |
+| Applying | Solving problems using information | Interpret, Apply, Demonstrate, Establish, Determine, Estimate, Calculate, Relate |
+| Analysing | Reaching a conclusion from evidence | Analyse, Compare, Inspect, Examine, Verify, Select, Test, Arrange |
+| Synthesising | Breaking down into components | Propose, Design, Formulate, Collect, Construct, Prepare, Undertake, Assemble |
+| Evaluating | Judging merit | Appraise, Evaluate, Compare, Assess, Recommend, Conclude, Select |
+
+The verb sets the cognitive level; specificity - population, method, timeframe - is what makes the objective checkable. A high-level verb attached to a vague construct is still a weak objective.
+
+**From aim to objectives.** Objectives break the aim into the specific steps that, completed together, achieve it. Each is a single infinitive statement opening with a bank verb, each addresses one component of the aim, and the set is ordered so the thinking climbs from lower to higher levels.
 
 > Aim: *To analyse the effectiveness of social media in decongesting the city of Venice.*
 > Objectives:
 > 1. To discover the influence of social media on tourists' decisions on when and what to visit in a destination.
 > 2. To analyse whether the place-visitor relationship helps change traditional visitor routes in Venice.
 > 3. To analyse the role of social media in changing traditional visitor routes in Venice.
+
+Here the verbs climb from *discover* (understanding) to *analyse* (analysing). A stronger set would carry the final objective up to evaluating - for example *To recommend how Venice can use social media to redistribute visitor flows* - which also feeds directly into the recommendations chapter.
 
 Each objective must be answerable by the end of the dissertation - if you cannot confirm whether it was achieved, it is not specific enough. Keep the SMART discipline in how each is phrased:
 
