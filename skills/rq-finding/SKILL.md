@@ -110,12 +110,32 @@ The title is a condensed, reader-facing version of the RQ. It should signal the 
 
 ## Step 7 - Present candidates for decision
 
+Before locking a research question, show the thinking that produced it. A bare RQ that appears from nowhere hides the narrowing the student needs to understand and the marker expects to see. Present each candidate as a funnel through three levels, moving from broad territory to answerable question:
+
+- **Research idea** - the phenomenon, area or tension being studied, written as a noun phrase, not yet a question. The "what interests me" level.
+- **Overarching question** - the broad question that captures the whole territory. Open and exploratory, usually too large to answer within 15,000 words, but it frames why the narrower question matters. Typically opens with "In what ways...", "To what extent...", "How can...".
+- **Research question** - the narrowed, specific, answerable version the dissertation will actually test. This is the one that must pass the Step 8 self-check.
+
+The point of showing all three is that the reader can see the RQ is a deliberate narrowing of a larger concern rather than an arbitrary pick, and it becomes obvious when a proposed "research question" is still sitting at overarching level and needs further sharpening. The research question is not merely a shorter overarching question - it commits to a specific construct that makes the question measurable.
+
+Worked examples of the funnel:
+
+| Research idea | Overarching question | Research question |
+|---|---|---|
+| Media campaigns following product recalls | In what ways can media campaigns be designed to increase consumer trust, value and loyalty in exchange relationships following product recalls? | How does brand equity in media campaigns increase consumer trust, value and loyalty following product recalls? |
+| Supermarket coupons as a promotional device | To what extent do supermarket coupon promotions influence buyer behaviour? | Does couponing affect buyer motivation in supermarkets? |
+
+Notice how each research question fixes on a specific construct - *brand equity*, *buyer motivation* - that the overarching question left open. That commitment is what makes the question researchable.
+
 Offer three to five candidates in this format. Do not recommend one as "the best" without stating the trade-off.
 
 ```
 ### Candidate [n]: [Working title]
 
-**RQ**: [Full research question]
+**Research idea**: [The phenomenon or tension — a noun phrase, not yet a question]
+**Overarching question**: [The broad question capturing the whole territory — open, exploratory]
+**Research question**: [The narrowed, specific, answerable question that will be tested]
+
 **Non-obvious angle**: [Which of the three strategies, and specifically how]
 **IV → mechanism → DV**: [The causal chain being proposed]
 **Theoretical anchor**: [Named theory, original author, year]
@@ -142,9 +162,26 @@ All five must be answerable yes:
 4. Does it go beyond confirming the obvious direction of a known relationship?
 5. Is the title framed around what is non-obvious, not just which variables are involved?
 
-## Step 9 - Draft aim and SMART objectives
+## Step 9 - Draft aim, then derive objectives
 
-Once locked, produce one overall aim and three to five SMART objectives for Chapter 1. Each objective must be answerable by the end of the dissertation - if you cannot confirm whether it was achieved, it is not SMART.
+Once locked, convert the research question into one overall aim, then decompose that aim into three to five objectives. The chain runs RQ → aim → objectives, and each link should visibly follow from the one before.
+
+**From RQ to aim.** The aim restates the research question as a statement of intent - an infinitive that keeps the same constructs and context and simply turns the question into a purpose.
+
+> RQ: *How does brand equity in media campaigns increase consumer trust, value and loyalty following product recalls?*
+> Aim: *To assess the impact of brand equity on consumer trust, value and loyalty relationships in media campaigns following a series of product recalls.*
+
+The aim preserves the same constructs (brand equity → trust, value, loyalty) and the same context (media campaigns, product recalls); it changes only from asking to intending.
+
+**From aim to objectives.** Objectives break the aim into the specific analytical steps that, completed together, achieve it. Each is a single infinitive statement (To discover..., To analyse..., To assess..., To evaluate...), and each addresses one component of the aim.
+
+> Aim: *To analyse the effectiveness of social media in decongesting the city of Venice.*
+> Objectives:
+> 1. To discover the influence of social media on tourists' decisions on when and what to visit in a destination.
+> 2. To analyse whether the place-visitor relationship helps change traditional visitor routes in Venice.
+> 3. To analyse the role of social media in changing traditional visitor routes in Venice.
+
+Each objective must be answerable by the end of the dissertation - if you cannot confirm whether it was achieved, it is not specific enough. Keep the SMART discipline in how each is phrased:
 
 - Weak: *To explore the relationship between X and Y*
 - SMART: *To test whether X significantly predicts Y among [population] using [method] data collected in [timeframe]*
