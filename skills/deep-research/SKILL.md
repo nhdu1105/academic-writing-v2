@@ -1,34 +1,59 @@
 ---
 name: deep-research
-description: Locate, verify, evaluate and synthesise academic sources for a Staffordshire MBA dissertation, organised by the geographic relevance cascade Vietnam first, then Southeast Asia, Asia, Europe/Americas, and global, with explicit transferability reasoning whenever non-Vietnamese evidence is used. Use this skill whenever the user needs to find literature, check whether a source is credible or even real, build a literature matrix, gather theory for a conceptual framework, find validated measurement instruments, or assemble research material against a chapter outline. Trigger on requests like "find papers on X", "what does the literature say about Y", "I need sources for section 2.3", or "is this citation real".
----
-
-# Academic source research and synthesis
-
-This skill produces verified research material organised against a chapter structure. It does not write dissertation prose. Its output is an input: a matrix of what the literature says, where the contradictions sit, and where the gap is.
-
-## Rule one - nothing enters the record unverified
-
-Language models generate citations that look completely plausible and do not exist. The author is real, the journal is real, the year is reasonable, and the paper was never written. A 2026 audit of 111 million references across 2.5 million papers estimated roughly 147,000 fabricated citations in 2025 alone. A marker checking one suspicious reference on Google Scholar takes thirty seconds, and under Staffordshire's academic misconduct policy a fabricated reference is not a slip.
-
-So: **search the web for every source. Never produce a reference from memory.**
-
-Each source carries one of three states:
-
-| State | Meaning | Use |
-|---|---|---|
-| **VERIFIED** | Found in a bibliographic index or on the publisher site; metadata matches | Citable |
-| **UNVERIFIABLE** | Plausible source not indexed internationally - common for Vietnamese journals, local reports, institutional publications | Citable only after the student obtains the document and confirms it |
-| **NOT FOUND** | Searched thoroughly; no trace | Discard. Do not repair the metadata and re-offer it. |
-
-Warning signs of fabrication: a title that fits the search terms unnaturally well; a real author who has never published in that area; a real journal where the volume, issue and year do not align; page numbers outside the issue's range; several sources sharing a suspiciously similar shape.
-
-When a source cannot be verified, say so. Never invent a reference to fill a hole in an argument - flag the hole as `[SOURCE NEEDED]` instead.
-
-## Rule two - the geographic cascade
-
+description: Find, verify and evaluate academic and other credible sources for a Staffordshire MBA dissertation - for the literature review or for any other chapter the user names - and deliver them as a Literature Review Matrix spreadsheet in the user's fixed 12-column format. Searching is organised by the geographic relevance cascade Vietnam first, then Southeast Asia, Asia, Europe/Americas, and global, with explicit transferability reasoning whenever non-Vietnamese evidence is used. Use this skill whenever the user needs to find literature, check whether a source is credible or even real, build or extend a literature matrix, gather theory for a conceptual framework, find validated measurement instruments, or assemble research material against a chapter outline. Trigger on requests like "find papers on X", "what does the literature say about Y", "I need sources for section 2.3", "build me a literature matrix", or "is this citation real". Always confirm the topic, aims and objectives before searching if the request does not already state them.
+Academic source research and synthesis
+This skill finds and verifies sources for a dissertation and hands them back as a structured
+matrix. It does not write dissertation prose. Its output is an input to writing: what the
+literature says, where the contradictions sit, and where the gap is.
+Sources are for whichever part of the dissertation the user names. The literature review is the
+default consumer, but the same search discipline serves the methodology chapter (validated
+instruments, method precedents), the introduction (context statistics), and the discussion
+(studies to agree or disagree with). Ask which, rather than assuming Chapter 2.
+Step 0 - clarify before searching
+Do not start searching on a thin prompt. A search launched against a guessed topic burns
+the user's time and returns a matrix they cannot use. Check whether the request already carries
+the four essentials:
+Topic - the phenomenon, the context, and the population or sector
+Aim / research question - what the dissertation is trying to establish
+Objectives or constructs - the specific variables, themes or sub-questions to find evidence for
+Where the sources are going - which chapter or section, and roughly how many sources
+If all four are present, or can be read off an outline, matrix or proposal the user has already
+supplied in this conversation or in an uploaded file, start searching. Say what has been
+assumed in one line and proceed; do not interrogate a user who has already done the work.
+If something essential is missing, ask before searching. Ask the smallest number of questions
+that unblock the search - one to three, never a long form. Use the interactive option tool when
+available, since it is faster to tap than to type. Typical gaps and the question that closes them:
+Missing	Ask
+Topic too broad ("fintech in Vietnam")	Which specific outcome or behaviour is being explained?
+No research question	What is the aim - measure a relationship, explore a process, evaluate a case?
+No constructs	Which variables or themes should the evidence cover?
+No destination	Which chapter or section are these for?
+No scope	Roughly how many sources, and any date or method restrictions?
+Method unclear	Quantitative, qualitative, or mixed - this decides whether to capture scales
+One thing worth flagging early rather than at the end: if the topic as stated has almost no
+Vietnamese empirical base, say so at clarification time and agree the cascade level before
+searching, instead of returning a matrix of foreign studies the user was not expecting.
+Rule one - nothing enters the record unverified
+Language models generate citations that look completely plausible and do not exist. The author
+is real, the journal is real, the year is reasonable, and the paper was never written. A 2026
+audit of 111 million references across 2.5 million papers estimated roughly 147,000 fabricated
+citations in 2025 alone. A marker checking one suspicious reference on Google Scholar takes
+thirty seconds, and under Staffordshire's academic misconduct policy a fabricated reference is
+not a slip.
+So: search the web for every source. Never produce a reference from memory.
+Each source carries one of three states, recorded in the matrix's `Other notes` column:
+State	Meaning	Use
+VERIFIED	Found in a bibliographic index or on the publisher site; metadata matches	Citable
+UNVERIFIABLE	Plausible source not indexed internationally - common for Vietnamese journals, local reports, institutional publications	Citable only after the student obtains the document and confirms it
+NOT FOUND	Searched thoroughly; no trace	Discard. Do not repair the metadata and re-offer it.
+Warning signs of fabrication: a title that fits the search terms unnaturally well; a real author
+who has never published in that area; a real journal where the volume, issue and year do not
+align; page numbers outside the issue's range; several sources sharing a suspiciously similar
+shape.
+When a source cannot be verified, say so. Never invent a reference to fill a hole in an argument
+flag the hole as `[SOURCE NEEDED]` instead.
+Rule two - the geographic cascade
 Search in this order and stop expanding once sufficient evidence exists at a level:
-
 ```
 1. Vietnam
 2. Southeast Asia (Indonesia, Thailand, Philippines, Malaysia, Singapore)
@@ -36,62 +61,57 @@ Search in this order and stop expanding once sufficient evidence exists at a lev
 4. Europe / Americas
 5. Global / cross-country studies
 ```
-
-**Whenever evidence comes from outside Vietnam, a transferability argument is mandatory.** Non-Vietnamese evidence is not automatically applicable, and asserting it is applicable without argument is exactly what markers penalise as uncritical use of sources. The argument must engage at least two of:
-
-| Dimension | Questions to answer |
-|---|---|
-| Economic structure | Comparable income level, financial depth, banking penetration? |
-| Institutional and regulatory | Similar supervisory regime, legal tradition, enforcement capacity? |
-| Market maturity | Is the phenomenon at a comparable stage of development? |
-| Cultural | Power distance, uncertainty avoidance, collectivism where behaviour is the outcome |
-| Demographic | Age structure, urbanisation, digital adoption |
-
-Write it in the form: *Evidence from [market] is used here because [dimension A] and [dimension B] are comparable to Vietnam; the principal limit on transferability is [dimension C], which suggests the effect size may [direction] in the Vietnamese case.*
-
-That last clause matters. A transferability argument that finds no limits is not an argument, it is an assertion.
-
-Where Vietnamese evidence is genuinely absent, say so explicitly and treat it as part of the gap - an under-studied context is a legitimate contribution claim under the Dissertation Guide's Strategy 3.
-
-## Rule three - source credibility hierarchy
-
-Work down this list. Upgrade weak sources before they reach the reference list.
-
-1. Peer-reviewed journal articles (ABS 3* and above preferred)
-2. Conference papers from top-tier venues
-3. Academic books from major scholarly publishers
-4. Institutional reports - World Bank, IMF, OECD, ADB, BIS, central banks
-5. Government and regulatory publications - State Bank of Vietnam, GSO, ministry publications
-6. Industry-grade sources - established market research, Statista, Bloomberg
-7. Company reports and news - non-statistical claims only
-
+Whenever evidence comes from outside Vietnam, a transferability argument is mandatory.
+Non-Vietnamese evidence is not automatically applicable, and asserting it is applicable without
+argument is exactly what markers penalise as uncritical use of sources. The argument must engage
+at least two of:
+Dimension	Questions to answer
+Economic structure	Comparable income level, financial depth, banking penetration?
+Institutional and regulatory	Similar supervisory regime, legal tradition, enforcement capacity?
+Market maturity	Is the phenomenon at a comparable stage of development?
+Cultural	Power distance, uncertainty avoidance, collectivism where behaviour is the outcome
+Demographic	Age structure, urbanisation, digital adoption
+Write it in the form: Evidence from [market] is used here because [dimension A] and
+[dimension B] are comparable to Vietnam; the principal limit on transferability is
+[dimension C], which suggests the effect size may [direction] in the Vietnamese case.
+That last clause matters. A transferability argument that finds no limits is not an argument, it
+is an assertion. The argument goes in the `Other notes` column of the matrix for every
+non-Vietnamese row.
+Where Vietnamese evidence is genuinely absent, say so explicitly and treat it as part of the gap
+an under-studied context is a legitimate contribution claim under the Dissertation Guide's
+Strategy 3.
+Rule three - source credibility hierarchy
+Work down this list. Upgrade weak sources before they reach the matrix.
+Peer-reviewed journal articles (ABS 3* and above preferred)
+Conference papers from top-tier venues
+Academic books from major scholarly publishers
+Institutional reports - World Bank, IMF, OECD, ADB, BIS, central banks
+Government and regulatory publications - State Bank of Vietnam, GSO, ministry publications
+Industry-grade sources - established market research, Statista, Bloomberg
+Company reports and news - non-statistical claims only
 Automatic replacements:
-
-| Weak | Replace with |
-|---|---|
-| Wikipedia | The original academic source it cites |
-| News article carrying a statistic | The central bank, statistical office or original study |
-| Commercial market report | World Bank / ADB / OECD equivalent |
-| Textbook citing a seminal study | The seminal study itself |
-| Blog or vendor white paper | Peer-reviewed paper or institutional source |
-
-The Dissertation Guide is explicit: use primary sources, avoid citing textbooks that cite the original study, and do not pad the reference list with sources that were not actually engaged with.
-
-## Volume targets
-
-For a 15,000-word Master's dissertation:
-
-| Type | Minimum |
-|---|---|
-| Peer-reviewed articles | 30 |
-| Institutional / regulatory sources | 8 |
-| Industry-grade sources | 5 |
-| **Total** | **50-70** |
-
-Composition rule: the majority from the last ten years, plus a smaller set of foundational seminal works cited from the original. A reference list of only recent papers signals no theoretical grounding; a list of only old ones signals no engagement with the current field.
-
-## Search strategy - record it before searching
-
+Weak	Replace with
+Wikipedia	The original academic source it cites
+News article carrying a statistic	The central bank, statistical office or original study
+Commercial market report	World Bank / ADB / OECD equivalent
+Textbook citing a seminal study	The seminal study itself
+Blog or vendor white paper	Peer-reviewed paper or institutional source
+The Dissertation Guide is explicit: use primary sources, avoid citing textbooks that cite the
+original study, and do not pad the reference list with sources that were not actually engaged
+with.
+Volume targets
+For a 15,000-word Master's dissertation, across the whole project:
+Type	Minimum
+Peer-reviewed articles	30
+Institutional / regulatory sources	8
+Industry-grade sources	5
+Total	50-70
+A single request will usually cover one section, so scale to what was asked and track the
+running total against these figures rather than dumping seventy rows at once.
+Composition rule: the majority from the last ten years, plus a smaller set of foundational
+seminal works cited from the original. A reference list of only recent papers signals no
+theoretical grounding; a list of only old ones signals no engagement with the current field.
+Search strategy - record it before searching
 ```
 Concept 1 terms: [primary] OR [synonym] OR [related construct]
 Concept 2 terms: ...
@@ -101,50 +121,89 @@ Inclusion criteria: [e.g. empirical studies reporting effect sizes]
 Exclusion criteria: [e.g. non-peer-reviewed, predatory venues]
 Databases: Google Scholar, Semantic Scholar, ScienceDirect, JSTOR, SSRN, VJOL
 ```
+Recording this makes Chapter 3 defensible and lets the student answer "why is study X missing"
+without improvising. Hand it back alongside the matrix.
+The deliverable - Literature Review Matrix
+The primary output is a spreadsheet in the user's fixed format. Twelve columns, in this
+order, with the header wording taken verbatim from
+`assets/literature_matrix_template.xlsx`. Do not add, remove, rename or reorder columns.
+#	Column	What goes in it
+A	Author	Harvard form: `Surname, A.B. and Surname, C.D.`; `et al.` for four or more
+B	Year Publication	Publication year only
+C	Journal Name	Journal, or publisher / issuing body for books and reports
+D	Title of paper	Full title, sentence case
+E	Citation Count	Google Scholar count with the date checked; `n/a` for reports
+F	Theory / Framework used	Named theory and its originator, e.g. `UTAUT2 (Venkatesh et al., 2012)`; `none stated` is a finding worth recording
+G	Methods	Design, sample size, population and market, analysis technique
+H	Results / Findings	The specific result, with effect sizes and significance where reported - not "found a positive relationship"
+I	Controveries / Diagreements with other authors	Which study in the matrix this one contradicts, and on what
+J	Limitations	The authors' own stated limitations, in their terms
+K	Implications for theory / practice	What the authors claim follows
+L	Other notes	Verification state, DOI or URL, transferability argument for non-Vietnamese evidence, scale details, and the section this feeds
+Three of these carry more weight than their size suggests:
+Column J, the authors' stated limitations. What a previous author admits their study could
+not do is the most defensible gap available, and citing it demonstrates the paper was actually
+read rather than skimmed from the abstract.
+Column H, effect sizes. Collecting these makes it possible to say whether findings across
+studies actually agree, rather than just noting that both were significant.
+Column I, disagreements. Fill it by comparing each new row against rows already in the
+matrix. A matrix with column I entirely blank means the reading was too narrow, not that the
+field is settled.
+Then read the matrix down the columns, not across the rows. Reading down `Results / Findings` exposes where the field agrees and where it contradicts itself. That pattern is the
+spine of the literature review, and it is what turns a list of summaries into an argument. State
+the two or three patterns found, in the chat reply, when handing over the file.
+Building the file
+Collect the verified sources as JSON, then run the bundled script, which writes the rows into
+the template with its formatting, title row and header wording intact:
+```bash
+python scripts/build_matrix.py sources.json /mnt/user-data/outputs/Literature_Review_Matrix.xlsx \
+  --title "Literature Review Matrix - <topic>"
+```
+Each JSON object takes the keys `author, year, journal, paper_title, citations, theory, methods, findings, controversies, limitations, implications, notes`, mapped to columns A-L in order.
+Rows are sorted alphabetically by author. Present the file with `present_files` - a file written
+but not presented cannot be opened.
+Two format notes. The template's column I and K headers contain spelling slips
+(`Controveries / Diagreements`, and a trailing space); these are reproduced verbatim so the
+user's file stays consistent, and correcting them is offered rather than done unasked. And when
+the user is extending a matrix they already have, edit their file - load it, append below the
+last row, and match its existing conventions - rather than generating a fresh one.
+If the user explicitly asks for the matrix in chat instead of as a file, render the same twelve
+columns as a markdown table and skip the script.
+Section-mapped companion notes
+Alongside the spreadsheet, hand back a short section-by-section note, so the matrix can be used
+while writing:
+```
+## Section 2.3 - [Section title from the approved outline]
 
-Recording this makes Chapter 3 defensible and lets the student answer "why is study X missing" without improvising.
-
-## Literature matrix
-
-The core deliverable. Build it as a table:
-
-| Author (Year) | Market & sample | Theory used | IV / mediator / moderator / DV | Method | Key finding | Effect size | Author's stated limitation | Verified |
-|---|---|---|---|---|---|---|---|---|
-
-Two columns earn their keep disproportionately:
-
-**Author's stated limitation.** What a previous author admits their study could not do is the most defensible gap available, and citing it demonstrates the paper was actually read rather than skimmed from the abstract.
-
-**Effect size.** Collecting these makes it possible to say whether findings across studies actually agree, rather than just noting that both were significant.
-
-Then read the matrix **down the columns, not across the rows**. Reading down "Key finding" exposes where the field agrees and where it contradicts itself. That pattern is the spine of the literature review, and it is what turns a list of summaries into an argument.
-
-## Instrument and construct capture
-
-For quantitative work, record for every construct:
-
-- Original scale source, author and year
-- Number of items
-- Reported reliability in the original study
-- Whether it has been validated in Vietnam or a comparable market
-- Whether translation and back-translation would be required
-
-If a scale has never been used in Vietnamese, flag that a pilot study and translation protocol will be needed - it belongs in Chapter 3 and markers ask about it.
-
-## Contradiction inventory
-
-Actively hunt for disagreement. A literature review in which every study agrees indicates insufficient reading, and contradictions are the richest source of a genuine research question.
-
+**Argument this section must support**: [from the structure skill]
+**Rows supporting it**: [Author, Year] · [Author, Year] · [Author, Year]
+**Contradiction present**: [if any]
+**Gap**: [what is not covered]
+**[SOURCE NEEDED]**: [claims the outline requires but no evidence was found for]
+```
+The `[SOURCE NEEDED]` markers are the useful part of this output. They tell the student exactly
+where the argument currently has no support, which is information they cannot get any other way.
+Instrument and construct capture
+For quantitative work, record in column L for every construct:
+Original scale source, author and year
+Number of items
+Reported reliability in the original study
+Whether it has been validated in Vietnam or a comparable market
+Whether translation and back-translation would be required
+If a scale has never been used in Vietnamese, flag that a pilot study and translation protocol
+will be needed - it belongs in Chapter 3 and markers ask about it.
+Contradiction inventory
+Actively hunt for disagreement. A literature review in which every study agrees indicates
+insufficient reading, and contradictions are the richest source of a genuine research question.
+Column I holds the short version; expand the significant ones in the companion notes:
 ```
 Contradiction: [Study A] finds [X]; [Study B] finds [not X]
 Possible explanations: [sample / market / measurement / time period / method]
 Implication for this study: [what design decision this forces]
 ```
-
-## Harvard capture format
-
-Record complete metadata at the moment of finding, not later.
-
+Harvard capture format
+Record complete metadata at the moment of finding, not later. The matrix columns hold enough to
+rebuild any of these forms.
 ```
 Journal article
 Author, A.B. and Author, C.D. (Year) 'Article title.' Journal Name,
@@ -163,25 +222,5 @@ Organisation (Year) Title of Report. Place: Publisher.
 Website
 Organisation (Year) Title of Page. Available at: URL (Accessed: Day Month Year).
 ```
-
-In-text: `(Author, Year)`, `(Author et al., Year)` for three or more, `(Author A, Year; Author B, Year)` for multiple sources, and `(Author, Year: page)` when a page reference is needed. Alphabetical order in the list; only sources actually cited in the text appear there.
-
-## Output format
-
-Deliver research material mapped to the chapter outline, so it can be used section by section:
-
-```
-## Section 2.3 - [Section title from the approved outline]
-
-**Argument this section must support**: [from the structure skill]
-
-**Evidence available**
-- [Author, Year] — [finding] — [market] — [VERIFIED]
-- [Author, Year] — [finding] — [market] — [VERIFIED] — transferability: [argument]
-
-**Contradiction present**: [if any]
-**Gap**: [what is not covered]
-**[SOURCE NEEDED]**: [claims the outline requires but no evidence was found for]
-```
-
-The `[SOURCE NEEDED]` markers are the useful part of the output. They tell the student exactly where the argument currently has no support, which is information they cannot get any other way.
+In-text: `(Author, Year)`, `(Author et al., Year)` for three or more, `(Author A, Year; Author B, Year)` for multiple sources, and `(Author, Year: page)` when a page reference is needed.
+Alphabetical order in the list; only sources actually cited in the text appear there.
